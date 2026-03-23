@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Async Weather Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- noise texture overlay -->
+  <div class="noise"></div>
+
+  <!-- ambient orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="orb orb-4"></div>
+
+  <div class="page">
+
+    <!-- ── TOPBAR ── -->
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-icon">◈</span>
+        <span class="brand-name">Async Weather Tracker</span>
+      </div>
+
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </span>
+        <input id="cityInput" class="search-input" placeholder="Enter city — Delhi, Tokyo, NYC…" autocomplete="off" />
+        <button id="searchBtn" class="search-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- ── GRID ── -->
+    <main class="grid">
+
+      <!-- LEFT: History -->
+      <aside class="panel panel-history">
+        <div class="panel-label">SEARCH HISTORY</div>
+        <div class="history" id="history">
+          <p class="hint-text">No recent searches yet.<br/>Start by searching a city above.</p>
+        </div>
+      </aside>
+
+      <!-- RIGHT: Weather -->
+      <section class="panel panel-weather">
+        <div class="panel-label">WEATHER DATA</div>
+        <div id="weather">
+          <div class="empty-state">
+            <div class="empty-icon">🌐</div>
+            <p class="empty-text">Search a city to load live weather data</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
